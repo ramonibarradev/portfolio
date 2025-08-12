@@ -1,39 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramon Ibarra - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ramon Ibarra — Portfolio</title>
+
+  <!-- Basic metadata -->
+  <meta name="description" content="Portfolio of Ramon Ibarra — IT Support specialist transitioning into web development." />
+  <meta name="author" content="Ramon Ibarra" />
+
+  <!-- Open Graph (nice when sharing links) -->
+  <meta property="og:title" content="Ramon Ibarra — Portfolio" />
+  <meta property="og:description" content="IT Support → Web Developer. Projects, skills, and contact." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons (add later)
+  <link rel="icon" href="favicon.ico" />
+  -->
+  <style>
+    /* TEMP minimal styling for readability; delete later when you add real CSS */
+    body { max-width: 900px; margin: 0 auto; padding: 16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; }
+    header, footer { text-align: center; }
+    nav a { margin: 0 .5rem; }
+    section { margin: 2rem 0; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+    .project-list { list-style: none; padding: 0; }
+    .project-list > li { margin: 1rem 0; }
+    figure { margin: 0; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Ramon Ibarra</h1>
-        <p>Aspiring Web Developer | IT Support Specialist</p>
-    </header>
+  <a class="visually-hidden" href="#main">Skip to main content</a>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Hello! I'm Ramon, transitioning from IT support to web development. I love building clean, accessible, and user-friendly websites.</p>
-        </section>
+  <header>
+    <h1>Ramon Ibarra</h1>
+    <p>Aspiring Web Developer | IT Support Specialist</p>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>Portfolio Website</li>
-                <li>Landing Page</li>
-                <li>Survey Form</li>
-            </ul>
-        </section>
+  <main id="main">
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>
+        Hi, I’m Ramon. I’m transitioning from IT Support to web development.
+        I enjoy building clean, accessible interfaces and learning by shipping small projects.
+      </p>
+      <!-- Optional headshot later:
+      <figure>
+        <img src="images/ramon.jpg" alt="Ramon Ibarra" width="200" />
+        <figcaption>Ramon Ibarra</figcaption>
+      </figure>
+      -->
+    </section>
 
-        <section>
-            <h2>Contact</h2>
-            <p>Email: ramonibarra.dev@gmail.com</p>
-        </section>
-    </main>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>HTML5 (semantic elements, forms, accessibility basics)</li>
+        <li>Basic CSS (box model, typography) — in progress</li>
+        <li>JavaScript fundamentals — starting soon</li>
+        <li>Git & GitHub (branches, commits, pushes)</li>
+        <li>Terminal & basic troubleshooting from IT background</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>© 2025 Ramon Ibarra</p>
-    </footer>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <ul class="project-list">
+        <li>
+          <article>
+            <header>
+              <h3>Personal Portfolio (this site)</h3>
+            </header>
+            <p>A simple, semantic HTML structure to showcase my work as I learn CSS/JS.</p>
+            <!-- Replace # with your repo once pushed -->
+            <p>
+              <a href="#" rel="noopener">Live Demo</a> ·
+              <a href="https://github.com/ramonibarradev/portfolio" rel="noopener">Source Code</a>
+            </p>
+          </article>
+        </li>
+
+        <li>
+          <article>
+            <header>
+              <h3>Product Landing Page</h3>
+            </header>
+            <p>Single-page layout highlighting features and a sign-up form (HTML first; styling to come).</p>
+            <p>
+              <a href="#" rel="noopener">Live Demo</a> ·
+              <a href="#" rel="noopener">Source Code</a>
+            </p>
+          </article>
+        </li>
+
+        <li>
+          <article>
+            <header>
+              <h3>Survey Form</h3>
+            </header>
+            <p>Accessible form with labels, fieldsets, and validation attributes.</p>
+            <p>
+              <a href="#" rel="noopener">Live Demo</a> ·
+              <a href="#" rel="noopener">Source Code</a>
+            </p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>Email me: <a href="mailto:ramonibarra.dev@gmail.com">ramonibarra.dev@gmail.com</a></p>
+      <!-- When you add a backend later, wire up this form; for now it's just markup -->
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+        <button type="submit" aria-disabled="true" title="Form not wired yet">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2025</span> Ramon Ibarra</p>
+  </footer>
+
+  <!-- Tiny inline script just to update the year (optional) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
